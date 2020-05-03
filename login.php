@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 
             array_push($result['login'], $index);
 
-            $result['permission_level'] = $row['permission_level';]
+            $result['permission_level'] = $row['permission_level'];
             
             $result['success'] = "1";
             $result['message'] = "success";
@@ -44,9 +44,6 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
             mysqli_close($conn);
 
         }
-
     }
-
 }
-
 ?>
