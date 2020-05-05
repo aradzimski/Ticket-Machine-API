@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] =='POST'){
 
     require_once 'connect.php';
 
-    $sql = "INSERT INTO ticket (event_id, user_id, key) VALUES ('$event_id', '$user_id', '$key')";
+    $sql = "INSERT INTO ticket (`event_id`, `user_id`, `key`) VALUES ('$event_id', '$user_id', '$key')";
 
     if ( mysqli_query($conn, $sql) ) {
         $result["success"] = "1";
