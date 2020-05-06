@@ -5,10 +5,11 @@ if ($_SERVER['REQUEST_METHOD'] =='POST'){
     $event_id = $_POST['event_id'];
     $user_id = $_POST['user_id'];
     $key = $_POST['key'];
+    $createdOn = date("Y-m-d H:i:s");
 
     require_once 'connect.php';
 
-    $sql = "INSERT INTO ticket (`event_id`, `user_id`, `key`) VALUES ('$event_id', '$user_id', '$key')";
+    $sql = "INSERT INTO ticket (`event_id`, `user_id`, `key`, `createdOn`) VALUES ('$event_id', '$user_id', '$key', '$createdOn')";
 
     if ( mysqli_query($conn, $sql) ) {
         $result["success"] = "1";
