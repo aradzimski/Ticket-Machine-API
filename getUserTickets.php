@@ -6,7 +6,11 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 
 require_once 'connect.php';
 
-$sql = "SELECT * FROM ticket WHERE `user_id`='$user_id' ";
+$sql = "SELECT t.id, t.event_id, t.user_id, t.key, t.createdOn, e.name 
+FROM `ticket` AS t 
+LEFT JOIN `event` AS e 
+ON (t.event_id = e.id) 
+WHERE `user_id`='$user_id' AND `active`='1'";
 
     $response = mysqli_query($conn, $sql);
     $result['read'] = array();
