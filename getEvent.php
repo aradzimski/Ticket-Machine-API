@@ -2,7 +2,7 @@
 
 if ($_SERVER['REQUEST_METHOD']=='POST') {
 
-    $ticket_id = $_POST['id'];
+    $id = $_POST['id'];
 
 require_once 'connect.php';
 
