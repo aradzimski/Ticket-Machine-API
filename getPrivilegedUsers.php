@@ -2,7 +2,7 @@
 
 require_once 'connect.php';
 
-$sql = "SELECT * FROM user WHERE permission_level WHERE user.permission_level IN('admin','bodyguard') order by permission_level ASC";
+$sql = "SELECT * FROM user WHERE permission_level IN('admin','bodyguard') order by permission_level ASC";
 
     $response = mysqli_query($conn, $sql);
     $result['read'] = array();
