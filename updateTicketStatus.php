@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] =='POST'){
 
     require_once 'connect.php';
 
-    $sql = "UPDATE ticket SET active = '0' WHERE 'key' = '$key'";
+    $sql = "UPDATE ticket SET active = '0' WHERE `key` ='$key'";
 
     if ( mysqli_query($conn, $sql) ) {
         $result["success"] = "1";
