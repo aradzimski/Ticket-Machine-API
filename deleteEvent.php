@@ -6,10 +6,10 @@ if ($_SERVER['REQUEST_METHOD'] =='POST'){
 
     require_once 'connect.php';
 
-    $sql = "DELETE FROM EVENT WHERE id = '$id'";
+    $sql = "DELETE FROM EVENT WHERE id = '$id' AND NOT EXISTS(SELECT ticket.id FROM ticket WHERE ticket.event_id = '$id')";
     
 
-    if ( mysqli_query($conn, $sql) ) {
+    if ( mysqli_query($conn, $sql) and mysqli_affected_rows($conn) === 1) {
         $result["success"] = "1";
         $result["message"] = "success";
 
